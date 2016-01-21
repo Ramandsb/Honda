@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Honda</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_add_acar">AddACar</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_register">Register</string>
+    <string name="title_activity_add_enggno">AddEnggno</string>
+    <string name="title_activity_myprofile">Myprofile</string>
+    <string name="title_activity_car_details">CarDetails</string>
+    <string name="title_activity_select_car">SelectCar</string>
+    <string name="title_activity_enquiry">Enquiry</string>
+</resources>

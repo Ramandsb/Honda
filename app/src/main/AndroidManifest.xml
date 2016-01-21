@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.adminpc.honda">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".locatemycar.AddACar"
+            android:label="@string/title_activity_add_acar"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".locatemycar.Login"
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".locatemycar.Register"
+            android:label="@string/title_activity_register"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".locatemycar.AddEnggno"
+            android:label="@string/title_activity_add_enggno"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".locatemycar.Myprofile"
+            android:label="@string/title_activity_myprofile"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".locatemycar.CarDetails"
+            android:label="@string/title_activity_car_details"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RequestEnquiry.SelectCar"
+            android:label="@string/title_activity_select_car"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RequestEnquiry.Enquiry"
+            android:label="@string/title_activity_enquiry"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+    </application>
+
+</manifest>
