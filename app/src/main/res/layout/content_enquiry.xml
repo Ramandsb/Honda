@@ -11,7 +11,8 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.adminpc.honda.RequestEnquiry.Enquiry"
     tools:showIn="@layout/activity_enquiry"
-    android:background="#eeeeee">
+    android:background="#eeeeee"
+    android:gravity="center">
 
     <LinearLayout
         android:layout_width="match_parent"

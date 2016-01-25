@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.adminpc.honda.ConsolidateAllcars.ConsolidateCars"
+    tools:showIn="@layout/activity_consolidate_cars"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="#eeeeee">
+
+    <LinearLayout
+        android:id="@+id/fullvideo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:gravity="center">
+
+    <VideoView
+        android:id="@+id/video_Consolo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/savelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/consoli_between"></LinearLayout>
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_margin="30dp"
+            android:background="@color/colorPrimary"
+            android:text="Save"
+            android:textSize="24sp"
+            android:textColor="#ffffff">
+
+        </Button>
+
+
+
+    </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

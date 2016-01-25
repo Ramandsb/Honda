@@ -8,37 +8,27 @@
     tools:context="com.example.adminpc.honda.locatemycar.Register"
     tools:showIn="@layout/activity_register"
     android:background="#eeeeee">
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="275dp"
+        android:layout_margin="50dp"
+        android:layout_gravity="center"
+        android:background="@drawable/logo"></LinearLayout>
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="110dp"
-        android:layout_marginTop="226dp"
-        android:gravity="center"
-        android:background="#ffffff"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:id="@+id/titlell">
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:text=""
-            android:hint="Title"
-            android:textSize="20sp"
-            android:id="@+id/ttle"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="110dp"
-        android:layout_marginTop="326dp"
         android:gravity="center"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
@@ -51,8 +41,9 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:text=""
-            android:hint="First Name"
+            android:hint="Name"
             android:textSize="20sp"
+            android:inputType="textPersonName"
             android:id="@+id/firstname"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
@@ -60,35 +51,10 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="110dp"
-        android:layout_marginTop="426dp"
-        android:gravity="center"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/lnll">
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:text=""
-            android:hint="Last Name"
-            android:textSize="20sp"
-            android:id="@+id/lastname"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            />
-
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="110dp"
-        android:layout_marginTop="526dp"
         android:gravity="center"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
@@ -102,6 +68,7 @@
             android:layout_height="80dp"
             android:text=""
             android:hint="Email Address"
+            android:inputType="textEmailAddress"
             android:textSize="20sp"
             android:id="@+id/email"
             android:layout_marginLeft="30dp"
@@ -113,7 +80,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="110dp"
-        android:layout_marginTop="626dp"
         android:gravity="center"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
@@ -126,7 +92,8 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:text=""
-            android:hint="Password"
+            android:hint="Mobile No."
+            android:inputType="phone"
             android:textSize="20sp"
             android:id="@+id/password"
             android:layout_marginLeft="30dp"
@@ -138,7 +105,31 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="110dp"
-        android:layout_marginTop="726dp"
+        android:gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/remark">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text=""
+            android:hint="City"
+            android:textSize="20sp"
+            android:inputType="textPersonName"
+            android:id="@+id/conpass"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
         android:gravity="center"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
@@ -151,9 +142,9 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:text=""
-            android:hint="Confirm Password"
+            android:hint="Remark"
             android:textSize="20sp"
-            android:id="@+id/conpass"
+            android:inputType="textPersonName"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             />
@@ -163,29 +154,20 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:text="Log In"
+        android:text="Register"
         android:id="@+id/button2"
         android:background="@color/colorPrimary"
         android:textColor="#ffffff"
         android:textSize="35sp"
+        android:onClick="register"
+        android:layout_below="@id/remark"
         android:layout_margin="20dp"
-        android:layout_below="@+id/cpll"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:text="Request Enquiry"
-        android:id="@+id/button4"
-        android:background="@color/colorPrimary"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="61dp"
-        android:textColor="#ffffff"
-        android:textSize="40sp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+
+        </LinearLayout>
+    </ScrollView>
+
 
 </RelativeLayout>

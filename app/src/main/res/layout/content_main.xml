@@ -8,6 +8,13 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.adminpc.honda.MainActivity"
     tools:showIn="@layout/activity_main">
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,7 +30,7 @@
         android:gravity="center">
 
         <LinearLayout
-            android:layout_width="200dp"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_gravity="left"
@@ -31,13 +38,15 @@
 
 
             <Button
+                android:id="@+id/safety"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_margin="3dp"
                 android:background="@color/colorPrimary"
-                android:text="SAFTY AND SEQURITY"
+                android:text="SAFETY and SECURITY"
                 android:textColor="#ffffff"
-                android:textSize="15dp" />
+                android:typeface="normal"
+                android:textSize="18dp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -45,10 +54,12 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/impact"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
                     android:layout_margin="20dp"
-                    android:background="@drawable/impact" />
+                    android:enabled="false"
+                    android:background="@drawable/grimpact" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -56,6 +67,30 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:text="IMPACT ALERT"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/share"
+                    android:layout_width="75dp"
+                    android:enabled="false"
+                    android:layout_height="75dp"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/grshare" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="SHARE MY LOCATION"
                     android:textSize="20sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -66,10 +101,12 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/locate"
                     android:layout_width="75dp"
+                    android:enabled="false"
                     android:layout_height="75dp"
                     android:layout_margin="20dp"
-                    android:background="@drawable/locate" />
+                    android:background="@drawable/grloca" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -87,10 +124,12 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/health"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
+                    android:enabled="false"
                     android:layout_margin="20dp"
-                    android:background="@drawable/health" />
+                    android:background="@drawable/grhealth" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -108,10 +147,12 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/trip"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
+                    android:enabled="false"
                     android:layout_margin="20dp"
-                    android:background="@drawable/ana" />
+                    android:background="@drawable/grtrip" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -129,10 +170,12 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/sos"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
+                    android:enabled="false"
                     android:layout_margin="20dp"
-                    android:background="@drawable/sos" />
+                    android:background="@drawable/grsos" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -144,32 +187,13 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
 
-                <Button
-                    android:layout_width="75dp"
-                    android:layout_height="75dp"
-                    android:layout_margin="20dp"
-                    android:background="@drawable/share" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:text="SHARE MY LOCATION"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
 
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="200dp"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_gravity="top"
@@ -177,13 +201,38 @@
 
 
             <Button
+                android:id="@+id/convie"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_margin="3dp"
                 android:background="@color/colorPrimary"
                 android:text="CONVENIENCE"
                 android:textColor="#ffffff"
-                android:textSize="15dp" />
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:id="@+id/hidview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/cars"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:enabled="false"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/grconsoli" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="CONSOLIDATE ALL CARS INFO"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -191,10 +240,35 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/calander"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
+                    android:enabled="false"
                     android:layout_margin="20dp"
-                    android:background="@drawable/service" />
+                    android:background="@drawable/grcal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="CAR CALLENDER"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/serboking"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:enabled="false"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/grservice" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -212,10 +286,12 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/serhis"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
+                    android:enabled="false"
                     android:layout_margin="20dp"
-                    android:background="@drawable/history" />
+                    android:background="@drawable/grservicehistory" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -233,17 +309,19 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/callnow"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
+                    android:enabled="false"
                     android:layout_margin="20dp"
-                    android:background="@drawable/reminder" />
+                    android:background="@drawable/grcallnow" />
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="20dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="SERVICE REMINDER"
+                    android:text="CALL-NOW"
                     android:textSize="20sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -254,17 +332,19 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/whatsnew"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
+                    android:enabled="false"
                     android:layout_margin="20dp"
-                    android:background="@drawable/feedback" />
+                    android:background="@drawable/grwhats" />
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="30dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="USER FEEDBACK"
+                    android:text="WHAT'S NEW"
                     android:textSize="20sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -274,7 +354,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="200dp"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="10dp"
@@ -283,13 +363,14 @@
 
 
             <Button
+                android:id="@+id/utility"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_margin="3dp"
                 android:background="@color/colorPrimary"
                 android:text="UTILITY"
                 android:textColor="#ffffff"
-                android:textSize="15dp" />
+                android:textSize="18sp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -297,10 +378,12 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/pit"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
+                    android:enabled="false"
                     android:layout_margin="20dp"
-                    android:background="@drawable/pit" />
+                    android:background="@drawable/greypistop" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -309,7 +392,8 @@
                     android:gravity="center"
                     android:text="PIT STOPS"
                     android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    />
             </LinearLayout>
 
             <LinearLayout
@@ -318,17 +402,19 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/checkhonda"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
+                    android:enabled="false"
                     android:layout_margin="20dp"
-                    android:background="@drawable/cal" />
+                    android:background="@drawable/grhondacars" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="CAR CALENDER"
+                    android:text="CHECK Honda"
                     android:textSize="20sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -339,17 +425,19 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/feedback"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
+                    android:enabled="false"
                     android:layout_margin="20dp"
-                    android:background="@drawable/fuel" />
+                    android:background="@drawable/grfeedback" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="FUEL LOG"
+                    android:text="FEEDBACK"
                     android:textSize="20sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -360,10 +448,35 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/reffer"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
+                    android:enabled="false"
                     android:layout_margin="20dp"
-                    android:background="@drawable/wallet" />
+                    android:background="@drawable/grcreate" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="CREATE NEW CAR ENQUIRY"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/wallet"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:enabled="false"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/grwal" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -371,6 +484,28 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:text="DOCUMENT WALLET"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/fuel"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:enabled="false"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/grcal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="LOG BOOK FUEL AND TRAVEL"
                     android:textSize="20sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -386,12 +521,14 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@color/colorPrimary"
-        android:text="Request Enquiry"
+        android:text="Register"
         android:textColor="#ffffff"
         android:layout_gravity="bottom"
         android:layout_marginTop="10dp"
         android:textSize="40sp"
+        android:onClick="registerClick"
         android:gravity="center"/>
 
-
+    </LinearLayout>
+    </ScrollView>
 </LinearLayout>

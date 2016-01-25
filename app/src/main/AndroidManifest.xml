@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.adminpc.honda">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,17 +13,17 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".locatemycar.AddACar"
+            android:label="@string/title_activity_add_acar"
+            android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".locatemycar.AddACar"
-            android:label="@string/title_activity_add_acar"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".locatemycar.Login"
             android:label="@string/title_activity_login"
@@ -49,6 +51,91 @@
         <activity
             android:name=".RequestEnquiry.Enquiry"
             android:label="@string/title_activity_enquiry"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TestActivity"
+            android:label="@string/title_activity_test"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SplashActivity"
+            android:label="@string/title_activity_splash"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".ImpactAlert.ImpactAlertgif"
+            android:label="@string/title_activity_impact_alertgif"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ShareMylocation"
+            android:label="@string/title_activity_share_mylocation"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CheckHonda.CheckHonda"
+            android:label="@string/title_activity_check_honda"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SharePage"
+            android:label="@string/title_activity_share_page"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AllCars"
+            android:label="@string/title_activity_all_cars"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Locate.Locatemycar"
+            android:label="@string/title_activity_locatemycar"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".VehicalHealth.VehicalHealth"
+            android:label="@string/title_activity_vehical_health"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TripAnalysis.TripAnalysisMain"
+            android:label="@string/title_activity_trip_analysis_main"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Sos.ManualSos"
+            android:label="@string/title_activity_manual_sos"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ConsolidateAllcars.ConsolidateCars"
+            android:label="@string/title_activity_consolidate_cars"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CarCallander.CarCallander"
+            android:label="@string/title_activity_car_callander"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".BokkingService.ServiceBokking"
+            android:label="@string/title_activity_service_bokking"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ServiceHistory.ServiceHistory"
+            android:label="@string/title_activity_service_history"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CallNow.CallNow"
+            android:label="@string/title_activity_call_now"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CallNow.CallDealer"
+            android:label="@string/title_activity_call_dealer"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".WhatsNew.WhatsNew"
+            android:label="@string/title_activity_whats_new"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PitStop.PitStop"
+            android:label="@string/title_activity_pit_stop"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CheckHonda.CheckHonda"
+            android:label="@string/title_activity_check_honda"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UserFeedback.Feedback"
+            android:label="@string/title_activity_feedback"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
