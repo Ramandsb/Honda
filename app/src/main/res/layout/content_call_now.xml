@@ -7,7 +7,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.adminpc.honda.CallNow.CallNow"
     tools:showIn="@layout/activity_call_now"
-    android:background="@drawable/callnowback">
+    android:background="@drawable/callnow">
 
     <Button
         android:layout_width="320dp"

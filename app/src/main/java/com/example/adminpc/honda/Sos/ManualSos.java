@@ -1,6 +1,7 @@
 package com.example.adminpc.honda.Sos;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -15,6 +16,7 @@ import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.View;
 import android.widget.MediaController;
+import android.widget.Toast;
 import android.widget.VideoView;
 
 import com.example.adminpc.honda.MainActivity;
@@ -27,8 +29,9 @@ public class ManualSos extends AppCompatActivity {
     DisplayMetrics dm;
     SurfaceView sur_View;
     MediaController media_Controller;
-    View back,sos,video;
+    View back,sos,videoview;
     private Handler mHandler = new Handler();
+    boolean flag=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,19 +40,17 @@ public class ManualSos extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-         allbut=findViewById(R.id.allbut);
         sos=findViewById(R.id.clicksos);
-        back=findViewById(R.id.shareimage);
-        video=findViewById(R.id.video);
-        mHandler.removeCallbacks(loadHomeActivity);
-        mHandler.postDelayed(loadHomeActivity, 3000);
+        videoview=findViewById(R.id.videoview);
+        getInit(R.raw.sos_f,20000);
         sos.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                allbut.setVisibility(View.GONE);
+                videoview.setVisibility(View.VISIBLE);
                 sos.setVisibility(View.GONE);
-                video.setVisibility(View.VISIBLE);
-                getInit();
+
+                getInit(R.raw.sos_s,6000);
+                flag=true;
                 return false;
 
             }
@@ -91,7 +92,7 @@ public class ManualSos extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void getInit() {
+    public void getInit(final int video,int duration) {
         video_player_view = (VideoView) findViewById(R.id.video_sos);
         media_Controller = new MediaController(this);
         dm = new DisplayMetrics();
@@ -101,20 +102,35 @@ public class ManualSos extends AppCompatActivity {
         video_player_view.setMinimumWidth(width);
         video_player_view.setMinimumHeight(height);
         video_player_view.setMediaController(null);
-        Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.sharenext);
+        Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + video);
         video_player_view.setVideoURI(uri);
+        video_player_view.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                if (flag==false) {
+                    videoview.setVisibility(View.GONE);
+                    sos.setVisibility(View.VISIBLE);
+                }else {
+                    Toast.makeText(ManualSos.this,"Sms Sent",Toast.LENGTH_LONG).show();
+                    Intent intent= new Intent(ManualSos.this,MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                    flag=false;
+                }
+            }
+        });
         video_player_view.start();
+//        mHandler.removeCallbacks(loadHomeActivity);
+//        mHandler.postDelayed(loadHomeActivity, duration);
     }
     // A runnable executed when the progressbar finishes which starts the HomeActivity.
-    private Runnable loadHomeActivity = new Runnable() {
-        public void run() {
-            allbut.setVisibility(View.GONE);
-            sos.setVisibility(View.VISIBLE);
-
-
-        }
-
-    };
+//    private Runnable loadHomeActivity = new Runnable() {
+//        public void run() {
+//
+//
+//        }
+//
+//    };
 
 
 }

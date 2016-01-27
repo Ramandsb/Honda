@@ -1,6 +1,7 @@
 package com.example.adminpc.honda;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -19,7 +20,7 @@ public class ShareMylocation extends AppCompatActivity {
     DisplayMetrics dm;
     SurfaceView sur_View;
     MediaController media_Controller;
-    View back;
+    View back,viewVideo;
     private Handler mHandler = new Handler();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +29,8 @@ public class ShareMylocation extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        back=findViewById(R.id.shareimage);
+        back=findViewById(R.id.view);
+        viewVideo=findViewById(R.id.shareimage);
         getInit(R.raw.share_f, 17000);
 
     }
@@ -66,7 +68,7 @@ public class ShareMylocation extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void getInit(int video,int duration) {
+    public void getInit(final int video,int duration) {
         video_player_view = (VideoView) findViewById(R.id.video_sharemylocation);
         media_Controller = new MediaController(this);
         dm = new DisplayMetrics();
@@ -78,19 +80,26 @@ public class ShareMylocation extends AppCompatActivity {
         video_player_view.setMediaController(null);
         Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + video);
         video_player_view.setVideoURI(uri);
+        video_player_view.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                back.setVisibility(View.VISIBLE);
+                viewVideo.setVisibility(View.GONE);
+                MainActivity.clikked=0;
+            }
+        });
         video_player_view.start();
-        mHandler.removeCallbacks(loadHomeActivity);
-        mHandler.postDelayed(loadHomeActivity, duration);
+
+//        mHandler.removeCallbacks(loadHomeActivity);
+//        mHandler.postDelayed(loadHomeActivity, duration);
     }
     // A runnable executed when the progressbar finishes which starts the HomeActivity.
-    private Runnable loadHomeActivity = new Runnable() {
-        public void run() {
-            video_player_view.setVisibility(View.GONE);
-            back.setBackgroundResource(R.drawable.share_between);
-            MainActivity.clikked=0;
-        }
-
-    };
+//    private Runnable loadHomeActivity = new Runnable() {
+//        public void run() {
+//
+//        }
+//
+///    };
 
 
 }

@@ -49,6 +49,7 @@
                 android:textSize="18dp" />
 
             <LinearLayout
+                android:id="@+id/impactlayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -68,11 +69,12 @@
                     android:gravity="center"
                     android:text="IMPACT ALERT"
                     android:textStyle="bold"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     />
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/lay_share"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -91,11 +93,12 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:text="SHARE MY LOCATION"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/lay_locate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -114,11 +117,12 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:text="LOCATE MY CAR"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/lay_health"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -136,12 +140,13 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="VEHICAL HEALTH"
-                    android:textSize="20sp"
+                    android:text="VEHICLE HEALTH"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/lay_trip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -160,11 +165,12 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:text="TRIP ANALYSIS"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/lay_sos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -183,7 +189,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:text="MANUAL SOS"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -235,6 +241,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/lay_calender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -252,12 +259,13 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="CAR CALLENDER"
+                    android:text="CAR CALENDAR"
                     android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/lay_serbook"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -276,11 +284,12 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:text="SERVICE BOOKING"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/lay_serhis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -299,11 +308,12 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:text="SERVICE HISTORY"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/lay_callnow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -322,11 +332,12 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:text="CALL-NOW"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/lay_whats"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -345,7 +356,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:text="WHAT'S NEW"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -373,6 +384,7 @@
                 android:textSize="18sp" />
 
             <LinearLayout
+                android:id="@+id/lay_pit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -391,12 +403,13 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:text="PIT STOPS"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     />
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/lay_check"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -415,11 +428,12 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:text="CHECK Honda"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/lay_feed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -438,11 +452,12 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:text="FEEDBACK"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/lay_reffer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -461,11 +476,12 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:text="CREATE NEW CAR ENQUIRY"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/lay_wallet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -488,6 +504,7 @@
                     android:textStyle="bold" />
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/lay_fuel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -506,7 +523,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:text="LOG BOOK FUEL AND TRAVEL"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
 

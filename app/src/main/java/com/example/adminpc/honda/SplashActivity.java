@@ -26,6 +26,8 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
         getInit();
         MainActivity.voi=0;
+        MainActivity.currentSelection="";
+
     }
 
     @Override

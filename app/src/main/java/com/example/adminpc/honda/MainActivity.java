@@ -19,12 +19,16 @@ import com.example.adminpc.honda.CallNow.CallNow;
 import com.example.adminpc.honda.CarCallander.CarCallander;
 import com.example.adminpc.honda.CheckHonda.CheckHonda;
 import com.example.adminpc.honda.ConsolidateAllcars.ConsolidateCars;
+import com.example.adminpc.honda.DocumentsWallet.DocumentWallet;
+import com.example.adminpc.honda.FuelLog.FuelLog;
 import com.example.adminpc.honda.ImpactAlert.ImpactAlertgif;
 import com.example.adminpc.honda.Locate.Locatemycar;
+import com.example.adminpc.honda.PitStop.PitStop;
 import com.example.adminpc.honda.RequestEnquiry.SelectCar;
 import com.example.adminpc.honda.ServiceHistory.ServiceHistory;
 import com.example.adminpc.honda.Sos.ManualSos;
 import com.example.adminpc.honda.TripAnalysis.TripAnalysisMain;
+import com.example.adminpc.honda.UserFeedback.Feedback;
 import com.example.adminpc.honda.VehicalHealth.VehicalHealth;
 import com.example.adminpc.honda.WhatsNew.WhatsNew;
 import com.example.adminpc.honda.locatemycar.AddACar;
@@ -44,7 +48,9 @@ public class MainActivity extends AppCompatActivity {
     MediaPlayer voiceover;
    public static int voi=0;
     Class gotoclass;
-
+    View impactlayout,lay_share,lay_locate,lay_trip,lay_health,lay_sos;
+    View lay_cars,lay_calendar,lay_serbook,lay_serhis,lay_callnow,lay_whats;
+    View lay_pit,lay_check,lay_feed,lay_reffer,lay_wallet,lay_fuel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,12 +81,37 @@ public class MainActivity extends AppCompatActivity {
         wallet = (Button) findViewById(R.id.wallet);
         fuelbook = (Button) findViewById(R.id.fuel);
         health = (Button) findViewById(R.id.health);
+        /////////////////////////////////////////////
+        impactlayout =  findViewById(R.id.impactlayout);
+        lay_share =  findViewById(R.id.lay_share);
+        lay_locate =  findViewById(R.id.lay_locate);
+        lay_health =  findViewById(R.id.lay_health);
+        lay_trip =  findViewById(R.id.lay_trip);
+        lay_sos =  findViewById(R.id.lay_sos);
+        lay_cars =  findViewById(R.id.hidview);
+        lay_calendar =  findViewById(R.id.lay_calender);
+        lay_serbook =  findViewById(R.id.lay_serbook);
+        lay_serhis =  findViewById(R.id.lay_serhis);
+        lay_callnow =  findViewById(R.id.lay_callnow);
+        lay_whats =  findViewById(R.id.lay_whats);
+        lay_pit =  findViewById(R.id.lay_pit);
+        lay_check =  findViewById(R.id.lay_check);
+        lay_feed =  findViewById(R.id.lay_feed);
+        lay_reffer =  findViewById(R.id.lay_reffer);
+        lay_wallet =  findViewById(R.id.lay_wallet);
+        lay_fuel =  findViewById(R.id.lay_fuel);
         if (voi==0){
             playVO(null,12000,R.raw.menu_page);
 
         }
         voi++;
-        if (currentSelection.equals("safety")){
+        if (currentSelection.equals("")){
+            showsafety(false);
+            showconvi(false);
+            showutility(false);
+
+
+        }else if (currentSelection.equals("safety")){
             showsafety(true);
             showconvi(false);
             showutility(false);
@@ -104,15 +135,19 @@ public class MainActivity extends AppCompatActivity {
                 StopVoiceOver();
                 currentSelection="safety";
                 clikked++;
-                if (clikked==1) {
-                    showsafety(true);
+//                if (clikked==1) {
+//                    showsafety(true);
+//                    showconvi(false);
+//                    showutility(false);
+//                    playVO(null, 26000, R.raw.saftyandsec);
+//                }else if (clikked==2){
+//                    Intent i = new Intent(MainActivity.this,ImpactAlertgif.class);
+//                    startActivity(i);
+//                }
+                showsafety(true);
                     showconvi(false);
                     showutility(false);
                     playVO(null, 26000, R.raw.saftyandsec);
-                }else if (clikked==2){
-                    Intent i = new Intent(MainActivity.this,ImpactAlertgif.class);
-                    startActivity(i);
-                }
                 conviclikked=0;
                 utilityclikked=0;
 
@@ -126,15 +161,19 @@ public class MainActivity extends AppCompatActivity {
                 StopVoiceOver();
                 currentSelection="convie";
                 conviclikked++;
-                if (conviclikked==1) {
-                    showsafety(false);
+//                if (conviclikked==1) {
+//                    showsafety(false);
+//                    showconvi(true);
+//                    showutility(false);
+//                    playVO(null, 15000, R.raw.convience);
+//                }else if (conviclikked==2){
+//                    Intent i = new Intent(MainActivity.this,AllCars.class);
+//                    startActivity(i);
+//                }
+                showsafety(false);
                     showconvi(true);
                     showutility(false);
-//                    playVO(null, 15000, R.raw.convi_voice);
-                }else if (conviclikked==2){
-                    Intent i = new Intent(MainActivity.this,AllCars.class);
-                    startActivity(i);
-                }
+                    playVO(null, 15000, R.raw.convience);
 
                 clikked=0;
                 utilityclikked=0;
@@ -150,18 +189,32 @@ public class MainActivity extends AppCompatActivity {
                 currentSelection="utility";
                 utilityclikked++;
                 StopVoiceOver();
-                if (utilityclikked==1) {
-                    showsafety(false);
+//                if (utilityclikked==1) {
+//                    showsafety(false);
+//                    showconvi(false);
+//                    showutility(true);
+//
+//                    playVO(null, 11000, R.raw.utility);
+//                }else if (utilityclikked==2){
+//                    Intent i = new Intent(MainActivity.this,CheckHonda.class);
+//                    startActivity(i);
+//                }
+                showsafety(false);
                     showconvi(false);
                     showutility(true);
 
-//                    playVO(null, 11000, R.raw.utilitu);
-                }else if (utilityclikked==2){
-                    Intent i = new Intent(MainActivity.this,CheckHonda.class);
-                    startActivity(i);
-                }
+                    playVO(null, 11000, R.raw.utility);
                 clikked=0;
                 conviclikked=0;
+            }
+        });
+        impactlayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.startAnimation(animScale);
+//               playVO(ImpactAlertgif.class, 15000, R.raw.impact_alert);
+
+                GotoClass(ImpactAlertgif.class);
             }
         });
         impact.setOnClickListener(new View.OnClickListener() {
@@ -180,7 +233,22 @@ public class MainActivity extends AppCompatActivity {
                 GotoClass(ShareMylocation.class);
             }
         });
+        lay_share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.startAnimation(animScale);
+                GotoClass(ShareMylocation.class);
+            }
+        });
         locate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.startAnimation(animScale);
+                GotoClass(Locatemycar.class);
+
+            }
+        });
+        lay_locate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 v.startAnimation(animScale);
@@ -196,7 +264,23 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        lay_health.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.startAnimation(animScale);
+                GotoClass(VehicalHealth.class);
+
+            }
+        });
         trip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.startAnimation(animScale);
+                GotoClass(TripAnalysisMain.class);
+
+            }
+        });
+        lay_trip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 v.startAnimation(animScale);
@@ -212,7 +296,23 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        lay_sos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.startAnimation(animScale);
+                GotoClass(ManualSos.class);
+
+            }
+        });
         cars.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.startAnimation(animScale);
+                GotoClass(ConsolidateCars.class);
+
+            }
+        });
+        lay_cars.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 v.startAnimation(animScale);
@@ -228,7 +328,23 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        lay_calendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.startAnimation(animScale);
+                GotoClass(CarCallander.class);
+
+            }
+        });
         serbookin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.startAnimation(animScale);
+                GotoClass(ServiceBokking.class);
+
+            }
+        });
+        lay_serbook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 v.startAnimation(animScale);
@@ -244,7 +360,23 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        lay_serhis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.startAnimation(animScale);
+                GotoClass(ServiceHistory.class);
+
+            }
+        });
         callnow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.startAnimation(animScale);
+                GotoClass(CallNow.class);
+
+            }
+        });
+        lay_callnow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 v.startAnimation(animScale);
@@ -260,7 +392,23 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        lay_whats.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.startAnimation(animScale);
+                GotoClass(WhatsNew.class);
+
+            }
+        });
         refer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.startAnimation(animScale);
+                GotoClass(SelectCar.class);
+
+            }
+        });
+        lay_reffer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 v.startAnimation(animScale);
@@ -276,6 +424,108 @@ public class MainActivity extends AppCompatActivity {
                 v.startAnimation(animScale);
                 Intent intent = new Intent(MainActivity.this, CheckHonda.class);
                 startActivity(intent);
+
+
+            }
+        });
+        lay_check.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.startAnimation(animScale);
+                Intent intent = new Intent(MainActivity.this, CheckHonda.class);
+                startActivity(intent);
+
+
+            }
+        });
+
+
+        pitstop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.startAnimation(animScale);
+                GotoClass(PitStop.class);
+
+
+            }
+        });
+        lay_pit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.startAnimation(animScale);
+                GotoClass(PitStop.class);
+
+
+            }
+        });
+        feedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.startAnimation(animScale);
+                GotoClass(Feedback.class);
+
+
+            }
+        });
+        lay_feed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.startAnimation(animScale);
+                GotoClass(Feedback.class);
+
+
+            }
+        });
+//        refer.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                v.startAnimation(animScale);
+//                GotoClass(SelectCar.class);
+//
+//
+//            }
+//        });
+//        lay_reffer.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                v.startAnimation(animScale);
+//                GotoClass(SelectCar.class);
+//
+//
+//            }
+//        });
+        wallet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.startAnimation(animScale);
+                GotoClass(DocumentWallet.class);
+
+
+            }
+        });
+        lay_wallet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.startAnimation(animScale);
+                GotoClass(DocumentWallet.class);
+
+
+            }
+        });
+        fuelbook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.startAnimation(animScale);
+                GotoClass(FuelLog.class);
+
+
+            }
+        });
+        lay_fuel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.startAnimation(animScale);
+                GotoClass(FuelLog.class);
 
 
             }
@@ -328,6 +578,12 @@ public class MainActivity extends AppCompatActivity {
         health.setEnabled(res);
         trip.setEnabled(res);
         sos.setEnabled(res);
+        impactlayout.setEnabled(res);
+        lay_share.setEnabled(res);
+        lay_locate.setEnabled(res);
+        lay_health.setEnabled(res);
+        lay_trip.setEnabled(res);
+        lay_sos.setEnabled(res);
         if (res) {
             redSafety();
             greyconvie();
@@ -337,6 +593,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void showconvi(Boolean res) {
 
+        lay_cars.setEnabled(res);
+        lay_calendar.setEnabled(res);
+        lay_serbook.setEnabled(res);
+        lay_serhis.setEnabled(res);
+        lay_callnow.setEnabled(res);
+        lay_whats.setEnabled(res);
         cars.setEnabled(res);
         calander.setEnabled(res);
         serbookin.setEnabled(res);
@@ -351,6 +613,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showutility(Boolean res) {
+        lay_pit.setEnabled(res);
+        lay_check.setEnabled(res);
+        lay_feed.setEnabled(res);
+        lay_reffer.setEnabled(res);
+        lay_wallet.setEnabled(res);
+        lay_fuel.setEnabled(res);
         pitstop.setEnabled(res);
         checkhonda.setEnabled(res);
         feedback.setEnabled(res);

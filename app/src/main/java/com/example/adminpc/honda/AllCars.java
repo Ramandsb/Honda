@@ -1,6 +1,7 @@
 package com.example.adminpc.honda;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -30,8 +31,8 @@ public class AllCars extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         back=findViewById(R.id.shareimage);
-        mHandler.removeCallbacks(loadHomeActivity);
-        mHandler.postDelayed(loadHomeActivity, 27000);
+//        mHandler.removeCallbacks(loadHomeActivity);
+//        mHandler.postDelayed(loadHomeActivity, 27000);
         getInit();
 
 
@@ -49,20 +50,29 @@ public class AllCars extends AppCompatActivity {
         video_player_view.setMediaController(null);
         Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.allcars);
         video_player_view.setVideoURI(uri);
+        video_player_view.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+
+
+                Intent inten=new Intent(AllCars.this,MainActivity.class);
+                startActivity(inten);
+                finish();
+                MainActivity.clikked=0;
+                MainActivity.conviclikked=0;
+                MainActivity.utilityclikked=0;
+            }
+        });
         video_player_view.start();
     }
     // A runnable executed when the progressbar finishes which starts the HomeActivity.
-    private Runnable loadHomeActivity = new Runnable() {
-        public void run() {
-
-            finish();
-            MainActivity.clikked=0;
-            MainActivity.conviclikked=0;
-            MainActivity.utilityclikked=0;
-
-        }
-
-    };
+//    private Runnable loadHomeActivity = new Runnable() {
+//        public void run() {
+//
+//
+//        }
+//
+//    };
 
 
 }

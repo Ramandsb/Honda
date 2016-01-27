@@ -1,13 +1,13 @@
 <resources>
     <string name="app_name">Honda</string>
     <string name="title_activity_main">Menu</string>
-    <string name="title_activity_add_acar">Touch To Start </string>
+    <string name="title_activity_add_acar">Honda Connect</string>
     <string name="title_activity_login">Login</string>
     <string name="title_activity_register">Register</string>
     <string name="title_activity_add_enggno">AddEnggno</string>
     <string name="title_activity_myprofile">Myprofile</string>
-    <string name="title_activity_car_details">CarDetails</string>
-    <string name="title_activity_select_car">SelectCar</string>
+    <string name="title_activity_car_details">Car Details</string>
+    <string name="title_activity_select_car">Select Car</string>
     <string name="title_activity_enquiry">Enquiry</string>
     <string name="title_activity_test">TestActivity</string>
     <string name="title_activity_splash">Honda Connect</string>
@@ -15,16 +15,16 @@
     <string name="title_activity_share_mylocation">Share My Location</string>
     <string name="title_activity_check_honda">Check Honda Cars</string>
     <string name="title_activity_share_page">Share</string>
-    <string name="title_activity_all_cars">AllCars</string>
+    <string name="title_activity_all_cars">All Cars</string>
     <string name="title_activity_locatemycar">Locate My Car</string>
-    <string name="title_activity_vehical_health">Vehical Health Monitoring</string>
+    <string name="title_activity_vehical_health">Vehicle Health Monitoring</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_trip_analysis_main">Trip Analysis</string>
     <string name="title_activity_manual_sos">Manual SOS</string>
     <string name="title_activity_consolidate_cars">Consolidate Cars Info</string>
-    <string name="title_activity_car_callander">Car Callander</string>
+    <string name="title_activity_car_callander">Car Calander</string>
     <string name="title_activity_service_bokking">Service Booking</string>
     <string name="title_activity_service_history">Service History</string>
     <string name="title_activity_call_now">Call Now</string>
@@ -33,4 +33,7 @@
     <string name="title_activity_pit_stop">Pit Stop</string>
     <string name="title_activity_check_cars">Check Cars</string>
     <string name="title_activity_feedback">User Feedback</string>
+    <string name="title_activity_document_wallet">Document Wallet</string>
+    <string name="title_activity_documents">Documents</string>
+    <string name="title_activity_fuel_log">Fuel Log</string>
 </resources>

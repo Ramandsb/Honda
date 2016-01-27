@@ -14,53 +14,68 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@color/colorPrimary">
+        android:visibility="gone"
+        android:paddingBottom="1dp"
+        android:paddingTop="1dp"
+        android:background="@color/colorbar">
         <Button
             android:id="@+id/topLocate"
             android:layout_weight="1"
             android:layout_width="wrap_content"
-            android:layout_height="80dp"
-            android:text="Locate My Car"
-            android:textColor="@color/colorPrimary"
+            android:layout_height="75dp"
+            android:text="Locate My car"
+            android:textAllCaps="false"
+            android:textColor="@color/colorbar"
             android:textSize="22sp"
-            android:textStyle="bold"
             android:layout_margin="3dp"
             android:background="#ffffff"/>
         <Button
             android:id="@+id/topTrip"
             android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="80dp"
+            android:layout_width="120dp"
+            android:layout_height="75dp"
             android:text="Trips"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimary"
+            android:textAllCaps="false"
+            android:textColor="@color/colorbar"
             android:textSize="22sp"
             android:layout_margin="3dp"
             android:background="#ffffff"/>
         <Button
             android:id="@+id/topHealth"
             android:layout_weight="1"
+            android:textAllCaps="false"
             android:layout_width="wrap_content"
-            android:layout_height="80dp"
+            android:layout_height="75dp"
             android:text="My Car's Health"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/colorbar"
             android:textSize="22sp"
-            android:textStyle="bold"
             android:layout_margin="3dp"
             android:background="#ffffff"/>
     </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/videoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="visible">
+        <VideoView
+            android:id="@+id/video_firhealth"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"/>
+
+    </RelativeLayout>
+
     <LinearLayout
         android:id="@+id/frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center">
-        <VideoView
-            android:id="@+id/video_firhealth"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </LinearLayout>
+        android:background="@drawable/health_between"
+        android:orientation="horizontal"></LinearLayout>
 
 
 </LinearLayout>

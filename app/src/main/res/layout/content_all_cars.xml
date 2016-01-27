@@ -6,13 +6,66 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.adminpc.honda.AllCars"
-    tools:showIn="@layout/activity_all_cars"
-    android:gravity="center">
+    tools:showIn="@layout/activity_document_wallet"
+    android:gravity="center"
+    android:orientation="vertical">
 
-    <VideoView
-        android:id="@+id/video_allcars"
+    <RelativeLayout
+        android:id="@+id/videoview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <VideoView
+            android:id="@+id/video_allcars"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/back"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/doc_wall_bet">
+        <LinearLayout
+            android:id="@+id/doc_wal_but"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="30dp"
+            android:visibility="gone"
+            android:background="#ffffff">
+
+            <Button
+                android:id="@+id/mydoc"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_marginRight="140dp"
+                android:layout_marginLeft="100dp"
+                android:background="@drawable/mydocs"
+                android:textColor="#ffffff"
+                android:layout_weight="1"/>
+            <Button
+                android:id="@+id/fuelLog"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_marginRight="100dp"
+                android:background="@drawable/fuellog"
+                android:textColor="#ffffff"
+                android:enabled="false"
+                android:layout_weight="1"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
 
 
 </LinearLayout>
+

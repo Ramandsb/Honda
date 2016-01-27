@@ -1,6 +1,7 @@
 package com.example.adminpc.honda.ServiceHistory;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -96,29 +97,35 @@ public class ServiceHistory extends AppCompatActivity {
         video_player_view.setMediaController(null);
         Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + video);
         video_player_view.setVideoURI(uri);
+        video_player_view.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                if (flag==false){
+                    videoview.setVisibility(View.GONE);
+                    savelayout.setVisibility(View.VISIBLE);
+                }else {
+                    Intent intent= new Intent(ServiceHistory.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                    flag=false;
+                }
+            }
+        });
         video_player_view.start();
-        mHandler.removeCallbacks(loadHomeActivity);
-        mHandler.postDelayed(loadHomeActivity, duration);
+//        mHandler.removeCallbacks(loadHomeActivity);
+//        mHandler.postDelayed(loadHomeActivity, duration);
     }
     // A runnable executed when the progressbar finishes which starts the HomeActivity.
-    private Runnable loadHomeActivity = new Runnable() {
-        public void run() {
-
-            if (flag==false){
-                videoview.setVisibility(View.GONE);
-                savelayout.setVisibility(View.VISIBLE);
-            }else {
-                Intent intent= new Intent(ServiceHistory.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-                flag=false;
-            }
-
-
-
-        }
-
-    };
+//    private Runnable loadHomeActivity = new Runnable() {
+//        public void run() {
+//
+//
+//
+//
+//
+//        }
+//
+//    };
 
 
 }

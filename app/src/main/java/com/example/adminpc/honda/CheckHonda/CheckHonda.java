@@ -1,6 +1,7 @@
 package com.example.adminpc.honda.CheckHonda;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -33,9 +34,7 @@ public class CheckHonda extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        mHandler.removeCallbacks(loadHomeActivity);
-        mHandler.postDelayed(loadHomeActivity, 27000);
-        getInit();
+         getInit();
 
 
     }
@@ -80,19 +79,30 @@ public class CheckHonda extends AppCompatActivity {
         video_player_view.setMinimumWidth(width);
         video_player_view.setMinimumHeight(height);
         video_player_view.setMediaController(null);
-        Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.checkhondacars);
+        Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.check_honda);
         video_player_view.setVideoURI(uri);
+        video_player_view.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                Intent i = new Intent(CheckHonda.this,MainActivity.class);
+                startActivity(i);
+                finish();
+                MainActivity.clikked=0;
+                MainActivity.conviclikked=0;
+                MainActivity.utilityclikked=0;
+            }
+        });
         video_player_view.start();
+//        mHandler.removeCallbacks(loadHomeActivity);
+//        mHandler.postDelayed(loadHomeActivity, 37000);
+
     }
     // A runnable executed when the progressbar finishes which starts the HomeActivity.
-    private Runnable loadHomeActivity = new Runnable() {
-        public void run() {
-            finish();
-            MainActivity.clikked=0;
-            MainActivity.conviclikked=0;
-            MainActivity.utilityclikked=0;
-        }
-
-    };
+//    private Runnable loadHomeActivity = new Runnable() {
+//        public void run() {
+//
+//        }
+//
+//    };
 
 }

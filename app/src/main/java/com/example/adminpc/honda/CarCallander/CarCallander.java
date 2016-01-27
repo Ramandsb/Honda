@@ -3,6 +3,7 @@ package com.example.adminpc.honda.CarCallander;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -69,6 +70,8 @@ public class CarCallander extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                Intent intent = new Intent(CarCallander.this,MainActivity.class);
+                startActivity(intent);
                finish();
 
             }
@@ -131,21 +134,18 @@ public class CarCallander extends AppCompatActivity {
         video_player_view.setMediaController(null);
         Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.calender_main);
         video_player_view.setVideoURI(uri);
+        video_player_view.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                videoview.setVisibility(View.GONE);
+                savelayout.setVisibility(View.VISIBLE);
+
+            }
+        });
         video_player_view.start();
-        mHandler.removeCallbacks(loadHomeActivity);
-        mHandler.postDelayed(loadHomeActivity, 26000);
+//        mHandler.removeCallbacks(loadHomeActivity);
+//        mHandler.postDelayed(loadHomeActivity, 26000);
     }
-    // A runnable executed when the progressbar finishes which starts the HomeActivity.
-    private Runnable loadHomeActivity = new Runnable() {
-        public void run() {
-
-            videoview.setVisibility(View.GONE);
-            savelayout.setVisibility(View.VISIBLE);
-
-
-        }
-
-    };
 
 
 }

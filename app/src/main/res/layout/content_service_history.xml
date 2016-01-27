@@ -12,18 +12,22 @@
     android:gravity="center">
 
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/fullvideo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="visible"
-        android:gravity="center">
+        >
 
         <VideoView
             android:id="@+id/video_Consolo"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+    </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"

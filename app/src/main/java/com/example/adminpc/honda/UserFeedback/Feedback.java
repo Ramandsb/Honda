@@ -1,6 +1,7 @@
 package com.example.adminpc.honda.UserFeedback;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -34,8 +35,8 @@ public class Feedback extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        mHandler.removeCallbacks(loadHomeActivity);
-        mHandler.postDelayed(loadHomeActivity, 16000);
+//        mHandler.removeCallbacks(loadHomeActivity);
+//        mHandler.postDelayed(loadHomeActivity, 16000);
         getInit();
 
 
@@ -83,14 +84,22 @@ public class Feedback extends AppCompatActivity {
         video_player_view.setMediaController(null);
         Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.sharenext);
         video_player_view.setVideoURI(uri);
+        video_player_view.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                Intent i = new Intent(Feedback.this,MainActivity.class);
+                startActivity(i);
+                finish();
+                MainActivity.clikked=0;
+            }
+        });
         video_player_view.start();
     }
     // A runnable executed when the progressbar finishes which starts the HomeActivity.
     private Runnable loadHomeActivity = new Runnable() {
         public void run() {
 
-            finish();
-            MainActivity.clikked=0;
+
         }
 
     };

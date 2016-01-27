@@ -6,7 +6,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -17,7 +17,8 @@
         <activity
             android:name=".locatemycar.AddACar"
             android:label="@string/title_activity_add_acar"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,115 +28,154 @@
         <activity
             android:name=".locatemycar.Login"
             android:label="@string/title_activity_login"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".locatemycar.Register"
             android:label="@string/title_activity_register"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".locatemycar.AddEnggno"
             android:label="@string/title_activity_add_enggno"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".locatemycar.Myprofile"
             android:label="@string/title_activity_myprofile"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".locatemycar.CarDetails"
             android:label="@string/title_activity_car_details"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RequestEnquiry.SelectCar"
             android:label="@string/title_activity_select_car"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RequestEnquiry.Enquiry"
             android:label="@string/title_activity_enquiry"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".TestActivity"
             android:label="@string/title_activity_test"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SplashActivity"
             android:label="@string/title_activity_splash"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ImpactAlert.ImpactAlertgif"
             android:label="@string/title_activity_impact_alertgif"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ShareMylocation"
             android:label="@string/title_activity_share_mylocation"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".CheckHonda.CheckHonda"
             android:label="@string/title_activity_check_honda"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SharePage"
             android:label="@string/title_activity_share_page"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".AllCars"
             android:label="@string/title_activity_all_cars"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Locate.Locatemycar"
             android:label="@string/title_activity_locatemycar"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".VehicalHealth.VehicalHealth"
             android:label="@string/title_activity_vehical_health"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".TripAnalysis.TripAnalysisMain"
             android:label="@string/title_activity_trip_analysis_main"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Sos.ManualSos"
             android:label="@string/title_activity_manual_sos"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ConsolidateAllcars.ConsolidateCars"
             android:label="@string/title_activity_consolidate_cars"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".CarCallander.CarCallander"
             android:label="@string/title_activity_car_callander"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".BokkingService.ServiceBokking"
             android:label="@string/title_activity_service_bokking"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ServiceHistory.ServiceHistory"
             android:label="@string/title_activity_service_history"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".CallNow.CallNow"
             android:label="@string/title_activity_call_now"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".CallNow.CallDealer"
             android:label="@string/title_activity_call_dealer"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".WhatsNew.WhatsNew"
             android:label="@string/title_activity_whats_new"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".PitStop.PitStop"
             android:label="@string/title_activity_pit_stop"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".CheckHonda.CheckHonda"
             android:label="@string/title_activity_check_honda"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".UserFeedback.Feedback"
             android:label="@string/title_activity_feedback"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DocumentsWallet.DocumentWallet"
+            android:label="@string/title_activity_document_wallet"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DocumentsWallet.Documents"
+            android:label="@string/title_activity_documents"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FuelLog.FuelLog"
+            android:label="@string/title_activity_fuel_log"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

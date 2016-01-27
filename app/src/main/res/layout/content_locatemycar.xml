@@ -6,12 +6,15 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.adminpc.honda.SharePage"
-    tools:showIn="@layout/activity_share_page"
-    android:gravity="center">
+    tools:showIn="@layout/activity_share_page">
 
     <VideoView
         android:id="@+id/video_locate"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
 
 </LinearLayout>

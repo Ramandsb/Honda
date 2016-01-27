@@ -11,39 +11,31 @@
     android:gravity="center">
 
 
-
-    <LinearLayout
-        android:id="@+id/allbut"
+    <RelativeLayout
+        android:id="@+id/videoview"
+        android:visibility="visible"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="50dp"
-        android:background="@drawable/share_between"
-        android:orientation="horizontal"
-        android:visibility="visible">
+        android:layout_height="match_parent">
 
+        <VideoView
+            android:id="@+id/video_sos"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+    </RelativeLayout>
 
-
-    </LinearLayout>
     <LinearLayout
         android:id="@+id/clicksos"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/splashscreen"
+        android:background="@drawable/sos_between"
         android:orientation="horizontal">
 
     </LinearLayout>
-    <LinearLayout
-        android:id="@+id/video"
-        android:visibility="visible"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#111111">
 
-        <VideoView
-            android:id="@+id/video_sos"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
 
 
 

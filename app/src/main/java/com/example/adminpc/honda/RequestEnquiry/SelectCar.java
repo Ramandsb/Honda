@@ -1,6 +1,7 @@
 package com.example.adminpc.honda.RequestEnquiry;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -36,17 +37,8 @@ public class SelectCar extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         back=findViewById(R.id.shareimage);
-        mHandler.removeCallbacks(loadHomeActivity);
-        mHandler.postDelayed(loadHomeActivity, 15000);
         getInit();
-        Button next= (Button) findViewById(R.id.button4);
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                video_player_view.stopPlayback();
-                getInit();
-            }
-        });
+
 
 
     }
@@ -92,19 +84,29 @@ public class SelectCar extends AppCompatActivity {
         video_player_view.setMinimumWidth(width);
         video_player_view.setMinimumHeight(height);
         video_player_view.setMediaController(null);
-        Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.sharenext);
+        Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.request_enquiry);
         video_player_view.setVideoURI(uri);
+        video_player_view.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                video_player_view.pause();
+                Intent i =  new Intent(SelectCar.this,MainActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
         video_player_view.start();
+//        mHandler.removeCallbacks(loadHomeActivity);
+//        mHandler.postDelayed(loadHomeActivity, 34000);
     }
     // A runnable executed when the progressbar finishes which starts the HomeActivity.
-    private Runnable loadHomeActivity = new Runnable() {
-        public void run() {
-
-            video_player_view.pause();
-
-        }
-
-    };
+//    private Runnable loadHomeActivity = new Runnable() {
+//        public void run() {
+//
+//
+//        }
+//
+//    };
 
 }
 

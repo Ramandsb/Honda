@@ -2,6 +2,7 @@ package com.example.adminpc.honda.TripAnalysis;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -29,7 +30,7 @@ public class TripAnalysisMain extends AppCompatActivity {
     SurfaceView sur_View;
     MediaController media_Controller;
     View topbar;
-    View frame;
+    View frame,videoV;
     boolean flag=false;
     private Handler mHandler = new Handler();
     @Override
@@ -42,47 +43,49 @@ public class TripAnalysisMain extends AppCompatActivity {
         topLocate = (Button) findViewById(R.id.topLocate);
         topTrip = (Button) findViewById(R.id.topTrip);
         topHealth = (Button) findViewById(R.id.topHealth);
-        topLocate.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+        topLocate.setBackgroundColor(getResources().getColor(R.color.colorbar));
         topLocate.setTextColor(Color.WHITE);
         topbar=findViewById(R.id.topbar);
         frame=findViewById(R.id.frame);
+        videoV=findViewById(R.id.videoV);
         topbar.setVisibility(View.GONE);
         getInit(R.raw.trip_f,15000);
         topLocate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                topLocate.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                topLocate.setBackgroundColor(getResources().getColor(R.color.colorbar));
                 topLocate.setTextColor(Color.WHITE);
                 topTrip.setBackgroundColor(Color.WHITE);
-                topTrip.setTextColor(getResources().getColor(R.color.colorPrimary));
+                topTrip.setTextColor(getResources().getColor(R.color.colorbar));
                 topHealth.setBackgroundColor(Color.WHITE);
-                topHealth.setTextColor(getResources().getColor(R.color.colorPrimary));
+                topHealth.setTextColor(getResources().getColor(R.color.colorbar));
             }
         });
         topTrip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                topTrip.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                topTrip.setBackgroundColor(getResources().getColor(R.color.colorbar));
                 topTrip.setTextColor(Color.WHITE);
                 topLocate.setBackgroundColor(Color.WHITE);
-                topLocate.setTextColor(getResources().getColor(R.color.colorPrimary));
+                topLocate.setTextColor(getResources().getColor(R.color.colorbar));
                 topHealth.setBackgroundColor(Color.WHITE);
                 topHealth.setTextColor(getResources().getColor(R.color.colorPrimary));
                 video_player_view.setVisibility(View.VISIBLE);
                 getInit(R.raw.trip_s, 23000);
-                frame.setBackgroundColor(Color.parseColor("#EEEEEE"));
+                videoV.setVisibility(View.VISIBLE);
+                frame.setVisibility(View.GONE);
                 flag=true;
             }
         });
         topHealth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                topHealth.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                topHealth.setBackgroundColor(getResources().getColor(R.color.colorbar));
                 topHealth.setTextColor(Color.WHITE);
                 topLocate.setBackgroundColor(Color.WHITE);
-                topLocate.setTextColor(getResources().getColor(R.color.colorPrimary));
+                topLocate.setTextColor(getResources().getColor(R.color.colorbar));
                 topTrip.setBackgroundColor(Color.WHITE);
-                topTrip.setTextColor(getResources().getColor(R.color.colorPrimary));
+                topTrip.setTextColor(getResources().getColor(R.color.colorbar));
 
             }
         });
@@ -132,29 +135,34 @@ public class TripAnalysisMain extends AppCompatActivity {
         video_player_view.setMediaController(null);
         Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + video);
         video_player_view.setVideoURI(uri);
+        video_player_view.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                if (flag==false) {
+
+                    topbar.setVisibility(View.VISIBLE);
+                    videoV.setVisibility(View.GONE);
+                }else {
+                    Intent intent= new Intent(TripAnalysisMain.this,MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                    MainActivity.clikked=0;
+                    flag=false;
+                }
+            }
+        });
         video_player_view.start();
-        mHandler.removeCallbacks(loadHomeActivity);
-        mHandler.postDelayed(loadHomeActivity, duration);
+//        mHandler.removeCallbacks(loadHomeActivity);
+//        mHandler.postDelayed(loadHomeActivity, duration);
     }
     // A runnable executed when the progressbar finishes which starts the HomeActivity.
-    private Runnable loadHomeActivity = new Runnable() {
-        public void run() {
-
-            if (flag==false) {
-                video_player_view.stopPlayback();
-                video_player_view.setVisibility(View.GONE);
-                topbar.setVisibility(View.VISIBLE);
-                frame.setBackgroundResource(R.drawable.trip_between);
-            }else {
-                Intent intent= new Intent(TripAnalysisMain.this,MainActivity.class);
-                startActivity(intent);
-                finish();
-                MainActivity.clikked=0;
-                flag=false;
-            }
-        }
-
-    };
+//    private Runnable loadHomeActivity = new Runnable() {
+//        public void run() {
+//
+//
+//        }
+//
+//    };
 
 
 }
